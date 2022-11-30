@@ -72,7 +72,7 @@ Most, if not all, are liscensed by the Vroid company/group whatever
 The nipple is some stock image of some dudes nipple that has been so pixelised that it is not
  recognisable which is questionably legal and silly if it is illegal
 It is also a dudes nipple which means it technically wouldn't be covered by censorship laws, because
-it is the milk ducts that are illegal hahaha thats bullshit but would be funny to say in court....well it looks like a dudes nipple, it says genderless nipple.
+it is the milk ducts that are illegal hahaha thats bullship but would be funny to say in court....well it looks like a dudes nipple, it says genderless nipple.
 but I will provide a link which techincally, while it is the honest thing to do, could get me in more legal trouble, which is silly.
 https://i.dailymail.co.uk/i/pix/2016/12/07/22/3B251FA000000578-0-image-a-29_1481150402297.jpg
 honestly at this point fuck liscenses, its a picture of a nipple....
@@ -97,6 +97,8 @@ For some reason I had to take a little from each to wrap my head around this shi
 A special mention to Wapit1 as he had made one of these addons and also happened to be very active
 on websites where people ask questions about getting active rigid body ragdolls to work in godot
 So he was very helpful and I saw his name enough to remember
+I remember this one being very helpful too
+https://github.com/R3X-G1L6AME5H/Godot-Active-Ragdolls
 
 
 Other special Mention 
