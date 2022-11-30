@@ -1,0 +1,104 @@
+This is a not a liscense of Godot
+
+Liscensing is a weird concept to me.
+A lot of code was copied directly from tutorials, I have tried to credit out of respect
+but I have probably forgotten a few parts, but that's okay because by teaching it in a tutorial setting 
+they are implicitly assuming it will be used. I don't believe in the concept
+ of patenting code as it is not your creation it is merely a solution
+ to solve a problem that anyone could have theoretically figured out. 
+Artists seem to be more concerned with their liscenses for some reason, even though technically
+digital art is still code and with my previous beliefs as well as the belief that anything that can be
+copied for free should be free for anyone I have tried to understand why artists care even on small scales
+ and cannot understand it. 
+
+All Code used is implicity shown to the audience under the presumption they will do what they want.
+
+All artwork used is either (under my interpretation) significantly changed from the original
+ that I dont need to bother with liscenses or one of a variety of liscenses that allow me to make changes
+and use essentially however I want.
+
+These Liscenses are
+CC0
+CC-ATTRIBUTION (, which includes CC BY 3.0 and CC BY 4.0)
+
+
+If there is anything I have forgetten I am sorry and I will try to remember where I got it from
+Most assets I download are CC0 and/or CC-ATTRIBUTION and other liscenses are stored elsewhere
+Except code which is unliscensed or liscensed under MIT which I'm under by using godot addons anyways
+
+If anyone wants their name removed incase this project gets too creepy for them then I guess I'll do it as
+long as it isn't a legal issue
+
+
+I have tried to keep a reference to assets and arts used.
+
+My Humanoid Model:
+#_BASE_
+Has a CC0 body and a CC-ATTRIBUTION head
+head : CC-ATTRIBUTION : David Onizaki :
+https://sketchfab.com/3d-models/genshin-style-anime-female-base-mesh-for-blender-c2d6727e8c9742feb9a4a3bccac6e0e0
+body: CC-ATTRIBUTION : ALexZ art : 
+https://sketchfab.com/3d-models/anime-girl-model-base-free-5a1ef64055c748fd94447adbfa5a88a2
+limbs: CC0 : adrix89 
+https://opengameart.org/content/anime-female-body
+ShapeKeys and Bone Morphs by (t)ME...so I choose you..CC0
+
+#_HAIR_
+
+female hairs : 
+CC-ATTRIBUTION : miccall
+https://sketchfab.com/3d-models/female-hairs-0a391b6508a241f4b0b399f403ee4602#download
+
+shortTopMessy:
+CC-ATTRIBUTION : FAHAD : hair
+https://sketchfab.com/3d-models/hair-038091f4eebb42f8b3f5aca5309d791e
+
+shortCloudHair:
+CC-ATTRIBUTION : Lenny : Beautiful Hair For Beautiful People (R15)
+https://sketchfab.com/3d-models/beautiful-hair-for-beautiful-people-r15-30b18a0a5dc24311b4d96d29a16612a1
+
+#The model was rigged by mixamo so I could try and have a system that is more easily model swappable,
+even with bad hardcoding practice. 
+No animations by mixamo are used as the liscense is too restrictive I have no clear response if I can
+put it on a free model that I give to people, which is silly! Ah well procedural animation works better
+with ragdolls anyways.
+
+
+#_SKIN_
+CC0 : Vroid
+skin is modified from CC0 assets. All taken from the base VRM model type or otther VRM CC0 assets.
+Most, if not all, are liscensed by the Vroid company/group whatever
+
+The nipple is some stock image of some dudes nipple that has been so pixelised that it is not
+ recognisable which is questionably legal and silly if it is illegal
+It is also a dudes nipple which means it technically wouldn't be covered by censorship laws, because
+it is the milk ducts that are illegal hahaha thats bullshit but would be funny to say in court....well it looks like a dudes nipple, it says genderless nipple.
+but I will provide a link which techincally, while it is the honest thing to do, could get me in more legal trouble, which is silly.
+https://i.dailymail.co.uk/i/pix/2016/12/07/22/3B251FA000000578-0-image-a-29_1481150402297.jpg
+honestly at this point fuck liscenses, its a picture of a nipple....
+the text at the bottom may have been removed in the modification process as I only required the aereola and nipple not the surrounding skin
+
+
+#_ITEMS_
+CC0 : Quaternius : Medieval Weapons Pack - Sept 2018
+https://opengameart.org/content/lowpoly-medieval-weapons
+
+Note: if other weapons were used they were from the same artist Quaternius and from his CC0 assets
+
+
+#_CODE_
+
+if artists need it then it feels wrong to not credit the programmers who do most the work in my project anyways
+a lot of code is originally from Bastiaan Olij and the other guy who helps with the XR_tools 
+(check respective githubs for the other addons) 
+So many useful Godot tutorials on youtube.
+The 5 or so people that have made rigid ragdoll addons. 
+For some reason I had to take a little from each to wrap my head around this shi..
+A special mention to Wapit1 as he had made one of these addons and also happened to be very active
+on websites where people ask questions about getting active rigid body ragdolls to work in godot
+So he was very helpful and I saw his name enough to remember
+
+
+Other special Mention 
+Kenney.nl whose CC0 assets countless times while prototyping, I think none of them made it
+into the base minimal project but they might have and if they did it's okay since they are CC0.

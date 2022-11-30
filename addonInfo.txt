@@ -1,0 +1,35 @@
+res:\addons\rigidRagdoll:
+
+
+
+\Tools\Spatial_XYZ is used to see the orientation of joints to know what angle dimensions refer to,
+The angle between RED and BLUE is, the other colour, GREEN.
+
+\Characters:
+rigidRagdollNPC.tscn is the main NPC
+rigidRagdollVRPC.tscn is the main VR player controller
+
+
+rigidRagdollNPC.tscn Structure:
+Spatial_1			= General reset and set up codes (not much)
+-Spatial_2			= Body morphs and colour changes and clothes, etc all things to make the single model look different
+--Skeleton			= called SkeletonRagdoll = MOST CODE IS HERE The parent of all the bones and the skeleton that gets deformed by the rigidBodies. 
+---Meshes			= the Meshes for the character that we deform with the skeleton (Body and Head)
+---RigidBody Bones		= RigidBodies, most are physical bones
+---BoneAttachments		= To keep other objects in the right place, e.g Eyes and speechBubble on head
+---Joints			= Joints to connect all the rigidBodies
+---capsuleBase			= The rigidBody that keeps the rest of the body upright and balanced (most the time), much easier than using feet
+----extraAreasForSignals	= Areas that need to move with the NPC fairly stable-y can be put as children of capsuleBase
+
+
+
+rigidRagdollVRPC.tscn Structure:
+Spatial_1
+-Spatial_2
+--Skeleton
+---Meshes
+---RigidBody Bones
+---Joints
+---capsuleBase			= MOST CODE IS HERE as, at the time, was useful having it as the parent of the origin. 
+----extraAreasForSignals
+----VROrigin

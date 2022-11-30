@@ -1,0 +1,75 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=2]
+
+[ext_resource path="res://addons/Godot-MToon-Shader/mtoon_outline.shader" type="Shader" id=1]
+[ext_resource path="res://addons/Godot-MToon-Shader/mtoon.shader" type="Shader" id=2]
+[ext_resource path="res://addons/rigidRagdoll/Assets/Shaders/betterBodyUVNipples_normalMap.png" type="Texture" id=3]
+[ext_resource path="res://addons/rigidRagdoll/Assets/Shaders/Body.png" type="Texture" id=4]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/_EnableAlphaCutout = 1
+shader_param/_Cutoff = 0.5
+shader_param/_Color = Plane( 1, 0.964706, 0.937255, 1 )
+shader_param/_ShadeColor = Plane( 0.97, 0.81, 0.86, 1 )
+shader_param/_MainTex_ST = Plane( 1, 1, 0, 0 )
+shader_param/_BumpScale = 1.0
+shader_param/_ReceiveShadowRate = 1.0
+shader_param/_ShadingGradeRate = 1.0
+shader_param/_ShadeShift = -0.6
+shader_param/_ShadeToony = 0.0
+shader_param/_LightColorAttenuation = 0.0
+shader_param/_IndirectLightIntensity = 0.1
+shader_param/_RimColor = Plane( 0, 0, 0, 1 )
+shader_param/_RimLightingMix = 0.0
+shader_param/_RimFresnelPower = 1.0
+shader_param/_RimLift = 0.0
+shader_param/_EmissionColor = Plane( 0, 0, 0, 1 )
+shader_param/_OutlineWidthMode = 1
+shader_param/_OutlineWidth = 0.25
+shader_param/_OutlineScaledMaxDistance = 1.0
+shader_param/_OutlineColorMode = 0.0
+shader_param/_OutlineColor = Plane( 0.145098, 0, 0, 1 )
+shader_param/_OutlineLightingMix = 1.0
+shader_param/_UvAnimScrollX = 0.0
+shader_param/_UvAnimRotation = 0.0
+shader_param/_UvAnimScrollY = 0.0
+shader_param/_DebugMode = 0.0
+shader_param/_MToonVersion = 33.0
+shader_param/_MainTex = ExtResource( 4 )
+shader_param/_ShadeTexture = ExtResource( 4 )
+shader_param/_BumpMap = ExtResource( 3 )
+
+[resource]
+next_pass = SubResource( 1 )
+shader = ExtResource( 2 )
+shader_param/_EnableAlphaCutout = 1
+shader_param/_Cutoff = 0.5
+shader_param/_Color = Plane( 1, 1, 1, 1 )
+shader_param/_ShadeColor = Plane( 0.97, 0.81, 0.86, 1 )
+shader_param/_MainTex_ST = Plane( 1, 1, 0, 0 )
+shader_param/_BumpScale = 1.0
+shader_param/_ReceiveShadowRate = 1.0
+shader_param/_ShadingGradeRate = 1.0
+shader_param/_ShadeShift = -0.6
+shader_param/_ShadeToony = 0.0
+shader_param/_LightColorAttenuation = 0.0
+shader_param/_IndirectLightIntensity = 0.1
+shader_param/_RimColor = Plane( 0, 0, 0, 1 )
+shader_param/_RimLightingMix = 0.0
+shader_param/_RimFresnelPower = 1.0
+shader_param/_RimLift = 0.0
+shader_param/_EmissionColor = Plane( 0, 0, 0, 1 )
+shader_param/_OutlineWidthMode = 1
+shader_param/_OutlineWidth = 0.25
+shader_param/_OutlineScaledMaxDistance = 1.0
+shader_param/_OutlineColorMode = 0.0
+shader_param/_OutlineColor = Plane( 0.145098, 0, 0, 1 )
+shader_param/_OutlineLightingMix = 1.0
+shader_param/_UvAnimScrollX = 0.0
+shader_param/_UvAnimRotation = 0.0
+shader_param/_UvAnimScrollY = 0.0
+shader_param/_DebugMode = 0.0
+shader_param/_MToonVersion = 33.0
+shader_param/_MainTex = ExtResource( 4 )
+shader_param/_ShadeTexture = ExtResource( 4 )
+shader_param/_BumpMap = ExtResource( 3 )

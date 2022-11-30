@@ -1,0 +1,91 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://TestScenes/RigidBodyFollowTest.gd" type="Script" id=2]
+[ext_resource path="res://TestScenes/TestCamera.gd" type="Script" id=3]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.24236, 1.24503, 0.193192 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 0.1, 0.1, 0.5 )
+
+[sub_resource type="SpatialMaterial" id=12]
+albedo_color = Color( 0.886275, 0.580392, 0.733333, 1 )
+
+[sub_resource type="CubeMesh" id=3]
+material = SubResource( 12 )
+size = Vector3( 0.2, 0.2, 1 )
+
+[sub_resource type="SpatialMaterial" id=11]
+albedo_color = Color( 0.337255, 0.160784, 0, 1 )
+metallic = 1.0
+metallic_specular = 0.35
+
+[sub_resource type="CylinderShape" id=9]
+radius = 6.10883
+
+[sub_resource type="CylinderShape" id=10]
+radius = 13.0607
+
+[node name="Camera" type="Camera"]
+transform = Transform( -0.999759, 0, 0.021972, 0, 1, 0, -0.021972, 0, -0.999759, 0, 1.368, 0 )
+script = ExtResource( 3 )
+
+[node name="Spatial" type="Spatial" parent="."]
+
+[node name="DetectArea" type="Area" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.36321, 0 )
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape" type="CollisionShape" parent="Spatial/DetectArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27636, 0 )
+shape = SubResource( 1 )
+
+[node name="KinematicBody" type="KinematicBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.36321, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27636, 0 )
+shape = SubResource( 1 )
+
+[node name="RigidBody" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.459326, -0.0772977, -0.957829 )
+collision_mask = 3
+gravity_scale = 0.0
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="RigidBody"]
+mesh = SubResource( 3 )
+material/0 = SubResource( 11 )
+
+[node name="LODRangeDetect" type="Spatial" parent="."]
+
+[node name="CloseLOD" type="Area" parent="LODRangeDetect"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.130365, 0, -5.93181 )
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape" type="CollisionShape" parent="LODRangeDetect/CloseLOD"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00757208, 0, 0.344543 )
+shape = SubResource( 9 )
+
+[node name="FarLOD" type="Area" parent="LODRangeDetect"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.264699, 0, -12.0442 )
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape" type="CollisionShape" parent="LODRangeDetect/FarLOD"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0384691, 0, 1.7504 )
+shape = SubResource( 10 )
+
+[connection signal="area_entered" from="LODRangeDetect/CloseLOD" to="LODRangeDetect" method="_on_CloseLOD_area_entered"]
+[connection signal="area_exited" from="LODRangeDetect/CloseLOD" to="LODRangeDetect" method="_on_CloseLOD_area_exited"]
+[connection signal="area_entered" from="LODRangeDetect/FarLOD" to="LODRangeDetect" method="_on_FarLOD_area_entered"]
+[connection signal="area_exited" from="LODRangeDetect/FarLOD" to="LODRangeDetect" method="_on_FarLOD_area_exited"]

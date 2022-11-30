@@ -1,0 +1,229 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://addons/rigidRagdoll/Characters/SimpleRRv2.gd" type="Script" id=1]
+[ext_resource path="res://addons/rigidRagdoll/Tools/XYZ_Spatial.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/rigidRagdoll/Characters/Legs.gd" type="Script" id=3]
+[ext_resource path="res://addons/rigidRagdoll/Scripts/simpleRagdoll_DamageTakingBodyPart.gd" type="Script" id=4]
+
+[sub_resource type="CapsuleMesh" id=1]
+radius = 0.14
+mid_height = 0.48
+radial_segments = 8
+rings = 4
+
+[sub_resource type="CapsuleShape" id=2]
+radius = 0.14
+height = 0.48
+
+[sub_resource type="SphereShape" id=7]
+radius = 0.229881
+
+[sub_resource type="SphereMesh" id=3]
+radius = 0.14
+height = 0.28
+radial_segments = 8
+rings = 4
+
+[sub_resource type="SphereShape" id=4]
+radius = 0.14
+
+[sub_resource type="CubeMesh" id=5]
+size = Vector3( 0.1, 0.1, 0.28 )
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 0.05, 0.05, 0.14 )
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="Legs" type="RigidBody" parent="."]
+mass = 12.0
+linear_damp = 2.673
+angular_damp = 2.673
+script = ExtResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Legs"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.38, 0 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../Body")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Legs"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.38, 0 )
+shape = SubResource( 2 )
+
+[node name="DetectArea" type="Area" parent="Legs"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.423556, 0 )
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape" type="CollisionShape" parent="Legs/DetectArea"]
+shape = SubResource( 7 )
+
+[node name="Body" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05568, 0 )
+mass = 2.0
+gravity_scale = -0.25
+script = ExtResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Body"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Body"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="Head" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.50812, -0.00944763 )
+mass = 6.0
+gravity_scale = -1.0
+script = ExtResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Head"]
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Head"]
+shape = SubResource( 4 )
+
+[node name="ArmL" type="RigidBody" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.276077, 1.27891, -0.0339559 )
+mass = 0.7
+gravity_scale = 0.8
+
+[node name="MeshInstance" type="MeshInstance" parent="ArmL"]
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="ArmL"]
+shape = SubResource( 6 )
+
+[node name="ForeArmL" type="RigidBody" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.558252, 1.27891, -0.0339559 )
+mass = 0.5
+gravity_scale = 0.8
+
+[node name="MeshInstance" type="MeshInstance" parent="ForeArmL"]
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="ForeArmL"]
+shape = SubResource( 6 )
+
+[node name="Spatial" parent="ForeArmL" instance=ExtResource( 2 )]
+visible = false
+
+[node name="ArmR" type="RigidBody" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.267676, 1.279, -0.033 )
+mass = 0.7
+gravity_scale = 0.8
+
+[node name="MeshInstance" type="MeshInstance" parent="ArmR"]
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="ArmR"]
+shape = SubResource( 6 )
+
+[node name="ForeArmR" type="RigidBody" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.549435, 1.279, -0.035 )
+mass = 0.5
+gravity_scale = 0.8
+
+[node name="MeshInstance" type="MeshInstance" parent="ForeArmR"]
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="ForeArmR"]
+shape = SubResource( 6 )
+
+[node name="HipsJoint" type="Generic6DOFJoint" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.722762, 0 )
+nodes/node_a = NodePath("../Legs")
+nodes/node_b = NodePath("../Body")
+angular_limit_x/upper_angle = 5.0
+angular_limit_x/lower_angle = -5.0
+angular_limit_x/restitution = 0.8
+angular_limit_y/restitution = 0.8
+angular_limit_z/upper_angle = 5.0
+angular_limit_z/lower_angle = -5.0
+angular_limit_z/restitution = 0.8
+angular_limit_z/force_limit = 1.0
+
+[node name="NeckJoint" type="Generic6DOFJoint" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.40075, 0 )
+nodes/node_a = NodePath("../Body")
+nodes/node_b = NodePath("../Head")
+angular_limit_x/upper_angle = 20.0
+angular_limit_x/lower_angle = -20.0
+angular_limit_x/restitution = 0.8
+angular_limit_x/damping = 16.0
+angular_limit_y/restitution = 0.8
+angular_limit_y/damping = 16.0
+angular_limit_z/upper_angle = 10.0
+angular_limit_z/lower_angle = -10.0
+angular_limit_z/softness = 0.01
+angular_limit_z/restitution = 0.8
+angular_limit_z/damping = 16.0
+
+[node name="ShoulderRJoint" type="Generic6DOFJoint" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.134229, 1.27016, -0.0397476 )
+nodes/node_a = NodePath("../Body")
+nodes/node_b = NodePath("../ArmR")
+angular_limit_x/restitution = 0.8
+angular_limit_x/damping = 16.0
+angular_limit_y/upper_angle = 20.0
+angular_limit_y/lower_angle = -20.0
+angular_limit_y/restitution = 0.8
+angular_limit_y/damping = 16.0
+angular_limit_z/upper_angle = 90.0
+angular_limit_z/lower_angle = -90.0
+angular_limit_z/softness = 0.01
+angular_limit_z/restitution = 0.8
+angular_limit_z/damping = 16.0
+
+[node name="ShoulderLJoint" type="Generic6DOFJoint" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.132073, 1.27, -0.04 )
+nodes/node_a = NodePath("../Body")
+nodes/node_b = NodePath("../ArmL")
+angular_limit_x/restitution = 0.8
+angular_limit_x/damping = 16.0
+angular_limit_y/upper_angle = 20.0
+angular_limit_y/lower_angle = -20.0
+angular_limit_y/restitution = 0.8
+angular_limit_y/damping = 16.0
+angular_limit_z/upper_angle = 90.0
+angular_limit_z/lower_angle = -90.0
+angular_limit_z/softness = 0.01
+angular_limit_z/restitution = 0.8
+angular_limit_z/damping = 16.0
+
+[node name="WristRJoint" type="Generic6DOFJoint" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.408102, 1.27016, -0.0397476 )
+nodes/node_a = NodePath("../ArmR")
+nodes/node_b = NodePath("../ForeArmR")
+angular_limit_x/restitution = 0.8
+angular_limit_x/damping = 16.0
+angular_limit_y/lower_angle = -90.0
+angular_limit_y/restitution = 0.8
+angular_limit_y/damping = 16.0
+angular_limit_z/softness = 0.01
+angular_limit_z/restitution = 0.8
+angular_limit_z/damping = 16.0
+
+[node name="WristLJoint" type="Generic6DOFJoint" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.414907, 1.27016, -0.0397476 )
+nodes/node_a = NodePath("../ArmL")
+nodes/node_b = NodePath("../ForeArmL")
+angular_limit_x/restitution = 0.8
+angular_limit_x/damping = 16.0
+angular_limit_y/upper_angle = 90.0
+angular_limit_y/restitution = 0.8
+angular_limit_y/damping = 16.0
+angular_limit_z/softness = 0.01
+angular_limit_z/restitution = 0.8
+angular_limit_z/damping = 16.0
+
+[node name="Area" type="Area" parent="."]

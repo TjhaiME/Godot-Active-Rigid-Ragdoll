@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Sword.obj-8dac4aa02c00717a4b7c3a10c3b83c22.mesh"
+
+[deps]
+
+files=[ "res://.import/Sword.obj-8dac4aa02c00717a4b7c3a10c3b83c22.mesh" ]
+
+source_file="res://addons/rigidRagdoll/Assets/Items/Weapons/Sword.obj"
+dest_files=[ "res://.import/Sword.obj-8dac4aa02c00717a4b7c3a10c3b83c22.mesh", "res://.import/Sword.obj-8dac4aa02c00717a4b7c3a10c3b83c22.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

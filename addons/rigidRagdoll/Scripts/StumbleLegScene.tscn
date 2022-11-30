@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://addons/rigidRagdoll/Scripts/absorbent_physicsMaterial.tres" type="PhysicsMaterial" id=1]
+[ext_resource path="res://addons/rigidRagdoll/Scripts/stumbleLeg.gd" type="Script" id=2]
+
+[sub_resource type="CapsuleShape" id=48]
+radius = 0.06
+height = 0.390341
+
+[sub_resource type="SphereShape" id=49]
+radius = 0.03
+
+[node name="StumbleLeg" type="RigidBody"]
+transform = Transform( 0.99994, 0, 0, 0, 1, 0, 0, 0, 0.999986, 0, 0, 0 )
+collision_layer = 16777217
+collision_mask = 3
+mass = 10.0
+physics_material_override = ExtResource( 1 )
+can_sleep = false
+script = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 1.75867e-08, 3.68018e-08, -3.07336e-08, -1, 5.82077e-11, 1, -4.74975e-08, 0, 0, 0 )
+shape = SubResource( 48 )
+
+[node name="FootArea" type="Area" parent="."]
+transform = Transform( 1, -8.09905e-10, -8.73115e-11, 1.44473e-08, 1, 1.86265e-09, -2.91038e-11, 3.72529e-09, 1, 0, -0.235904, 0 )
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="FootArea"]
+transform = Transform( 1, 6.64227e-09, 2.77556e-17, 6.99674e-09, 1, 0, -1.16415e-10, 8.88178e-16, 1, 0, 0, 0 )
+shape = SubResource( 49 )
+
+[connection signal="body_entered" from="FootArea" to="." method="_on_FootArea_body_entered"]
+[connection signal="body_exited" from="FootArea" to="." method="_on_FootArea_body_exited"]

@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Staff.obj-feccbd357f8712af347ace043f6cf549.mesh"
+
+[deps]
+
+files=[ "res://.import/Staff.obj-feccbd357f8712af347ace043f6cf549.mesh" ]
+
+source_file="res://addons/rigidRagdoll/Assets/Items/Weapons/Staff.obj"
+dest_files=[ "res://.import/Staff.obj-feccbd357f8712af347ace043f6cf549.mesh", "res://.import/Staff.obj-feccbd357f8712af347ace043f6cf549.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

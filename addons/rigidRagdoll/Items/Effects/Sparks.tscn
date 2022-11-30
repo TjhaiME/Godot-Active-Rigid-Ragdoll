@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=2]
+
+[sub_resource type="ParticlesMaterial" id=1]
+emission_shape = 1
+emission_sphere_radius = 0.04
+direction = Vector3( 0, 0, 0 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 10.0
+initial_velocity_random = 1.0
+angular_velocity_random = 1.0
+radial_accel = 5.79
+angle = 417.4
+angle_random = 1.0
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.521739, 1 )
+colors = PoolColorArray( 0.96875, 1, 0, 1, 0.984375, 0.484497, 0, 1, 1, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="SpatialMaterial" id=4]
+flags_unshaded = true
+params_blend_mode = 1
+params_billboard_mode = 1
+albedo_texture = SubResource( 3 )
+
+[sub_resource type="QuadMesh" id=5]
+material = SubResource( 4 )
+size = Vector2( 0.02, 0.1 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Particles" type="Particles" parent="."]
+emitting = false
+amount = 18
+lifetime = 0.06
+one_shot = true
+explosiveness = 0.31
+process_material = SubResource( 1 )
+draw_pass_1 = SubResource( 5 )
