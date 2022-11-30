@@ -4,6 +4,7 @@ This project has various Active Rigid Body Ragdolls including a full self balanc
 
 
 DESCRIPTION:
+
 I have found a way to make a simple self balancing humanoid ragdoll in Godot
 
 It doesn't NEED extra code to balance, it can do it entirely with the physics engine.
@@ -13,7 +14,8 @@ we just need corresponding bone names. (probably needs to be a similar height fo
 
 
 PHYSICS:
-he physics is similar to Moose Mighty Beanz
+
+the physics is similar to Moose Mighty Beanz
 
 It is easier for things to balance if their Centre of Mass is closer to the ground
 The Centre of Mass of a rigid body in Godot is located at the origin of the rigid body.
