@@ -1,0 +1,31 @@
+The base scene "TestNPCWar" is for simple demonstrations
+you can change the ragdoll type and amount of enemies in the export variable tab
+your character is a shitty camera and kinematic body with a rigidBody that badly hovers in front of you
+so you can walk into the enemy and bump them (I did this for VR so I didnt care too much about my test NON-VR character)...sometimes it flies away into the abyss
+but it works to demonstrate it
+
+various ragdolls located at:
+res://addons/rigidRagdoll/Characters/GeneralRagdoll_(...).tscn
+
+(...) replaced with one of the following
+Simple = single capsule as foot/leg
+CapsuleFoot = single CapsuleBase as foot and no lower legs (upper legs dangle from hips)
+Complex = single CapsuleBase as foot and has lower legs that dangle from the upper leg
+Stumble = Capsules for both feet, actually can walk
+
+These all use a base code RagdollExtra.gd or RagdollBase.gd (at res://addons/rigidRagdoll/Scripts/...)
+
+to change the mesh you need to get your own skeleton and mesh and move the rest of 
+the nodes to under the new skeleton instead of the old one.
+(e.g. merge from scene)
+Your scene (with YOUR mesh and the ragdoll) will need to tell the dictionary "rigidBodiesFromBones"
+what the names of your bones are in its ready function, look at one of the examples to see.
+you might have to rename the skeleton Node
+
+
+
+
+
+Other random scenes
+This is a very cut down version of my other project to make an addon, I have tried to minimise it and 
+only leave relevant code/scenes but there may be some random things here or there that may seem confusing
